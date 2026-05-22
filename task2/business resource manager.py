@@ -6,7 +6,7 @@ class Employee:
         self.name = name
         self.department = department
         self.base_salary = base_salary
-        self.kpi = kpi  # Показатель эффективности в %
+        self.kpi = kpi  
         
         # 3. ARRAY (Массив): Хранение зарплат по месяцам
         self.monthly_salaries = [] 
@@ -17,7 +17,7 @@ class Employee:
     def get_calculated_salary(self):
         """ 6. IF-ELSE: Логика начисления бонуса по KPI """
         if self.kpi >= 90:
-            bonus = self.base_salary * 0.20  # +20% премия
+            bonus = self.base_salary * 0.20  
             total_salary = self.base_salary + bonus
             return total_salary
         else:
@@ -63,7 +63,7 @@ class BusinessManager:
         """ Сортировка по итоговой зарплате (по убыванию) """
         if self.employees:
             self.employees.sort(key=lambda emp: emp.get_calculated_salary(), reverse=True)
-            print("↕️ База отсортирована по зарплатам (от больших к меньшим).")
+            print(" База отсортирована по зарплатам (от больших к меньшим).")
         else:
             print("База пуста.")
 
@@ -89,7 +89,7 @@ class BusinessManager:
 def main():
     manager = BusinessManager()
     
-    # Добавим тестовые данные сразу для удобства
+   
     manager.add_employee("Анна", "IT", 50000, 95)   # Получит премию (KPI > 90)
     manager.add_employee("Иван", "HR", 45000, 80)   # Без премии
     manager.add_employee("Олег", "IT", 55000, 92)   # Получит премию
